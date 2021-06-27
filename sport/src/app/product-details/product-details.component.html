@@ -1,0 +1,42 @@
+
+<div class="card"  *ngIf="product">
+    <div class="card-header" style="text-align: center;">
+       <h2 style="color: darkgreen;">{{product.productName}}</h2> 
+    </div>
+    <table>
+      <tr>
+        <td>
+      <div>
+           <img src="{{product.productImage}}" style="width: 500px;" class="card-img-top" alt="{{product.productImage}}">
+      </div></td>
+     <td><div>
+          <div>
+            <label><b>Discription : </b></label> {{product.description}}
+          </div>  
+          <div>
+            <label><b>Under : </b></label> {{product.category}}
+          </div>  
+          <div>
+            <label><b>Sixe : </b></label> {{product.productSize}}
+          </div>  
+          <div>
+            <label><b>Color : </b></label> {{product.color}}
+          </div>  
+          <div>
+            <label><b>Price : </b></label> {{product.mrp}}
+          </div>
+          <div>
+            <label><b>Discount : </b></label> {{product.discount}}
+          </div>  
+          <div>
+            <label><b>Price After Discount : </b></label> {{product.priceAfterDiscount}}
+          </div>  
+          <div class="btn-group">
+            <button (click)="view()" class="btn btn-outline-primary">Back </button>
+            <button  class="btn btn-outline-success">Order</button>
+            <button  class="btn btn-outline-warning">Add To Cart</button>
+          </div>
+        </div></td> 
+      </tr>
+    </table>
+  </div>
