@@ -16,6 +16,7 @@ export class ProductDetailsComponent implements OnInit {
   id: number = 0;
   product: Product = new Product();
   cart : Cart = new Cart();
+  isStock : boolean = false;
   constructor(private route: ActivatedRoute,private router: Router,
     private productService: ProductService, private cartService : CartService) { }
 
@@ -27,6 +28,9 @@ export class ProductDetailsComponent implements OnInit {
       .subscribe(data => {
         console.log(data)
         this.product = data;
+        if(!this.product.inStock){
+           this.isStock = true;
+        }
       }, error => console.log(error));
   }
   view(){

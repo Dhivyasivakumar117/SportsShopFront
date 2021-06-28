@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 import { Login } from '../class/Login';
 import { LoginService } from '../login.service';
 
@@ -39,7 +40,3 @@ export class LoginComponent implements OnInit {
           this.router.navigate(['/registration']);
       }
 }
-function DialogDataExampleDialog(DialogDataExampleDialog: any, arg1: { data: { animal: string; }; }) {
-  throw new Error('Function not implemented.');
-}
-

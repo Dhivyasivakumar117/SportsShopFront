@@ -51,6 +51,12 @@ import { CartlistComponent } from './cartlist/cartlist.component';
 import { UpdateCartComponent } from './update-cart/update-cart.component';
 import { CartDetailComponent } from './cart-detail/cart-detail.component';
 import { CreateCartComponent } from './create-cart/create-cart.component';
+import { AuthGuard } from './auth.guard';
+import { LoginService } from './login.service';
+import { CricketComponent } from './cricket/cricket.component';
+import { VollyballComponent } from './vollyball/vollyball.component';
+import { FootballComponent } from './football/football.component';
+import { HockyComponent } from './hocky/hocky.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +74,11 @@ import { CreateCartComponent } from './create-cart/create-cart.component';
     CartlistComponent,
     UpdateCartComponent,
     CartDetailComponent,
-    CreateCartComponent
+    CreateCartComponent,
+    CricketComponent,
+    VollyballComponent,
+    FootballComponent,
+    HockyComponent
   ],
 
   imports: [
@@ -111,7 +121,10 @@ import { CreateCartComponent } from './create-cart/create-cart.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    LoginService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

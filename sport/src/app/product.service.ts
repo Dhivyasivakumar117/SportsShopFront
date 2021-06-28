@@ -25,4 +25,7 @@ export class ProductService {
   updateProduct(id: number, value: any): Observable<Object> {
     return this.http.put(`${this.productUrl}/update/${id}`, value);
   }
+  getProductByCategory(category : string) : Observable<any> {
+    return this.http.get(`${this.productUrl}/category/${category}`);
+  }
 }
