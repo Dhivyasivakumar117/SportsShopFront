@@ -1,34 +1,3 @@
-<mat-toolbar style="background-color: rgb(235, 217, 217);" class="mat-elevation-z5">
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>My App</span>
-  <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>favorite</mat-icon>
-  </button>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-    <mat-icon>share</mat-icon>
-  </button>
-</mat-toolbar>
+<router-outlet></router-outlet>
 
-<mat-sidenav-container>
-  <mat-sidenav mode="side" opened style="background-color: rgb(235, 217, 217); top: 64px" >
-   <mat-nav-list style="width: 150px; top: 64px">
-     <a mat-list-item style="height: 60px;" routerLink = "editProduct" ><mat-icon>dashboard</mat-icon>Edit Product</a>
-     <a mat-list-item style="height: 60px;" routerLink = "addProduct" ><mat-icon>account_circle</mat-icon>Add Product</a>
-     <a mat-list-item style="height: 60px;" routerLink="viewProduct"><mat-icon>account_box</mat-icon>View Product</a>
-     <a mat-list-item style="height: 60px;"><mat-icon>calendar_today</mat-icon>Cricket</a>
-     <a mat-list-item style="height: 60px;"><mat-icon>contact_support</mat-icon>FootBall</a>
-     <a mat-list-item style="height: 60px;"><mat-icon>contact_support</mat-icon>VollyBall</a>
-     <a mat-list-item style="height: 60px;"><mat-icon>contact_support</mat-icon>Hocky</a>
-     <a mat-list-item style="height: 60px;"><mat-icon>contact_support</mat-icon>Hocky</a>
-     <a mat-list-item style="height: 60px;"><mat-icon>contact_support</mat-icon>Hocky</a>
-   </mat-nav-list>
-  </mat-sidenav>
-  <mat-sidenav-content >
-    <p style="height: 88vh;">
-      <router-outlet></router-outlet>
-    </p>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+

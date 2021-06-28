@@ -42,6 +42,11 @@ import { ViewProductComponent } from './view-product/view-product.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { Ng2OrderModule } from 'ng2-order-pipe';
+import { MenumoduleComponent } from './menumodule/menumodule.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterUserComponent } from './register-user/register-user.component';
+import { UserlistComponent } from './userlist/userlist.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +55,12 @@ import { Ng2OrderModule } from 'ng2-order-pipe';
     EditProductComponent,
     UpdateProductComponent,
     ViewProductComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    MenumoduleComponent,
+    LoginComponent,
+    RegisterUserComponent,
+    UserlistComponent,
+    UserDetailComponent
   ],
 
   imports: [
