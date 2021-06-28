@@ -1,0 +1,35 @@
+<p>create-cart works!</p>
+<h3>Create Cart</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Image Name</label>
+      <input type="text" class="form-control" id="imageName" required [(ngModel)]="cart.imageName" name="imageName">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Product Name</label>
+      <input type="text" class="form-control" id="productName" required [(ngModel)]="cart.productName"
+        name="productName">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Quantity</label>
+      <input type="text" class="form-control" id="quantity" required [(ngModel)]="cart.quantity" name="quantity">
+    </div>
+    <div class="form-group">
+      <label for="name">Price</label>
+      <input type="text" class="form-control" id="price" required [(ngModel)]="cart.price" name="price">
+    </div>
+    <div class="form-group">
+      <label for="name">Total</label>
+      <input type="text" class="form-control" id="total" required [(ngModel)]="cart.total" name="total">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>Success!</h4>
+</div>

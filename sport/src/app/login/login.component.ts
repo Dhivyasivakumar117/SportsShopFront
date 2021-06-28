@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Login } from '../class/Login';
 import { LoginService } from '../login.service';
@@ -13,9 +14,8 @@ export class LoginComponent implements OnInit {
     login : Login = new Login();
     submitted : boolean = false;
      
-    constructor(private loginService: LoginService,private router: Router) { }
+    constructor(private loginService: LoginService,private router: Router, public dialog: MatDialog) { }
     ngOnInit(): void {
-      //throw new Error('Method not implemented.');
       }
       save() {
         this.loginService.login(this.login).subscribe(
@@ -33,9 +33,13 @@ export class LoginComponent implements OnInit {
       this.save();    
       }
       gotoList() {
-        this.router.navigate(['/module']);
+        this.router.navigate(['/viewProduct']);
       }
       goto(){
           this.router.navigate(['/registration']);
       }
 }
+function DialogDataExampleDialog(DialogDataExampleDialog: any, arg1: { data: { animal: string; }; }) {
+  throw new Error('Function not implemented.');
+}
+

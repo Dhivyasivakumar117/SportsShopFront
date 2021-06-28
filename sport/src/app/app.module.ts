@@ -47,6 +47,10 @@ import { LoginComponent } from './login/login.component';
 import { RegisterUserComponent } from './register-user/register-user.component';
 import { UserlistComponent } from './userlist/userlist.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
+import { CartlistComponent } from './cartlist/cartlist.component';
+import { UpdateCartComponent } from './update-cart/update-cart.component';
+import { CartDetailComponent } from './cart-detail/cart-detail.component';
+import { CreateCartComponent } from './create-cart/create-cart.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +64,11 @@ import { UserDetailComponent } from './user-detail/user-detail.component';
     LoginComponent,
     RegisterUserComponent,
     UserlistComponent,
-    UserDetailComponent
+    UserDetailComponent,
+    CartlistComponent,
+    UpdateCartComponent,
+    CartDetailComponent,
+    CreateCartComponent
   ],
 
   imports: [

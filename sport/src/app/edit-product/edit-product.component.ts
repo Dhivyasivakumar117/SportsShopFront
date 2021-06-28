@@ -34,7 +34,7 @@ export class EditProductComponent implements OnInit {
   }
 
   updateProduct(id: number) {
-    this.router.navigate(['model','updateProduct', id]);
+    this.router.navigate(['updateProduct', id]);
   }
 
  
