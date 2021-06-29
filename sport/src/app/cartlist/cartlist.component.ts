@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { CartService } from '../cart.service';
 import { Cart } from '../class/Cart';
@@ -12,12 +12,19 @@ import { Cart } from '../class/Cart';
 export class CartlistComponent implements OnInit {
 
   cart!: Observable<Cart[]>;
-
-  constructor(private cartService: CartService,
+  total : number = 0;
+  userId : number = 0;
+  constructor(private cartService: CartService,private route: ActivatedRoute,
     private router: Router) { }
 
   ngOnInit(): void {
+   // this.userId = this.route.snapshot.params['userId']
     this.reloadData();
+    this.cart.forEach( (e) => {
+      e.forEach( (key) => {
+          this.total = this.total + key.total;
+      })
+    })
   }
   reloadData() {
     this.cart = this.cartService.getCartList();
@@ -40,5 +47,8 @@ export class CartlistComponent implements OnInit {
     this.router.navigate(['details', id]);
   }
 
+  order(price: number | string){
+    this.router.navigate(['createorder', price]);
+  }
 
 }

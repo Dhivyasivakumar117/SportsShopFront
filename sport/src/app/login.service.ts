@@ -24,4 +24,8 @@ export class LoginService {
   logout(id: string): Observable<any> {
     return this.http.get(`${this.loginUrl}/signout/${id}`, { responseType: 'text' });
   }
+
+  getLoginUser(login : boolean): Observable<any>{
+    return this.http.get(`${this.loginUrl}/login/${login}`);
+  }
 }

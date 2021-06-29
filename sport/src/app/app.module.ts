@@ -51,12 +51,22 @@ import { CartlistComponent } from './cartlist/cartlist.component';
 import { UpdateCartComponent } from './update-cart/update-cart.component';
 import { CartDetailComponent } from './cart-detail/cart-detail.component';
 import { CreateCartComponent } from './create-cart/create-cart.component';
-import { AuthGuard } from './auth.guard';
+import { AdminGuard } from './admin.guard';
 import { LoginService } from './login.service';
 import { CricketComponent } from './cricket/cricket.component';
 import { VollyballComponent } from './vollyball/vollyball.component';
 import { FootballComponent } from './football/football.component';
 import { HockyComponent } from './hocky/hocky.component';
+import { HomeComponent } from './home/home.component';
+import { CreateOrderComponent } from './create-order/create-order.component';
+import { OrderlistComponent } from './orderlist/orderlist.component';
+import { OrderDetailsComponent } from './order-details/order-details.component';
+import { CreatePaymentComponent } from './create-payment/create-payment.component';
+import { PaymentlistComponent } from './paymentlist/paymentlist.component';
+import { PaymentDetailsComponent } from './payment-details/payment-details.component';
+import { CreateCardComponent } from './create-card/create-card.component';
+import { CardlistComponent } from './cardlist/cardlist.component';
+import { CardDetailComponent } from './card-detail/card-detail.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +88,17 @@ import { HockyComponent } from './hocky/hocky.component';
     CricketComponent,
     VollyballComponent,
     FootballComponent,
-    HockyComponent
+    HockyComponent,
+    HomeComponent,
+    CreateOrderComponent,
+    OrderlistComponent,
+    OrderDetailsComponent,
+    CreatePaymentComponent,
+    PaymentlistComponent,
+    PaymentDetailsComponent,
+    CreateCardComponent,
+    CardlistComponent,
+    CardDetailComponent
   ],
 
   imports: [
@@ -118,11 +138,11 @@ import { HockyComponent } from './hocky/hocky.component';
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    FormsModule,
+    FormsModule, 
     HttpClientModule
   ],
   providers: [
-    AuthGuard,
+    AdminGuard,
     LoginService
   ],
   bootstrap: [AppComponent]

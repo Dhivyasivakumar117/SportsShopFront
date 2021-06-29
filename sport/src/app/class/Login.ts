@@ -3,4 +3,5 @@ export class Login{
 	userName : string = '';
 	password : string = '';
     isLoggedIn : boolean = false;
+    userId : number = 0;
 }

@@ -1,11 +1,15 @@
+
 <h3>Update Cart</h3>
 <div [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="name">Image Name</label><input type="text" class="form-control" id="imageName" required [(ngModel)]="cart.imageName" name="imageName">
-    </div><div class="form-group">
+      <label for="name">Image Name</label>
+      <input type="text" class="form-control" id="imageName" [disabled]="disable" required [(ngModel)]="cart.imageName" name="imageName">
+    </div>
+
+    <div class="form-group">
       <label for="name">Product Name</label>
-      <input type="text" class="form-control" id="productName" required [(ngModel)]="cart.productName"
+      <input type="text" class="form-control" id="productName" [disabled]="disable"  required [(ngModel)]="cart.productName"
         name="productName">
     </div>
 
@@ -15,14 +19,17 @@
     </div>
     <div class="form-group">
       <label for="name">Price</label>
-      <input type="text" class="form-control" id="price" required [(ngModel)]="cart.price" name="price">
+      <input type="text" class="form-control" id="price" [disabled]="disable" required [(ngModel)]="cart.price" name="price">
     </div>
-    <div class="form-group">
+   <!-- <div class="form-group">
       <label for="name">Total</label>
       <input type="text" class="form-control" id="total" required [(ngModel)]="cart.total" name="total">
-    </div>
-<button type="submit" class="btn btn-success">Submit</button>
+    </div>-->
+
+    <button type="submit" class="btn btn-success">Submit</button>
   </form>
-</div><div [hidden]="!submitted">
-  <h4>Updated successfully!</h4>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>Success!</h4>
 </div>
