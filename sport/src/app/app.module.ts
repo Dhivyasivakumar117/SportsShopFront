@@ -66,7 +66,7 @@ import { PaymentlistComponent } from './paymentlist/paymentlist.component';
 import { PaymentDetailsComponent } from './payment-details/payment-details.component';
 import { CreateCardComponent } from './create-card/create-card.component';
 import { CardlistComponent } from './cardlist/cardlist.component';
-import { CardDetailComponent } from './card-detail/card-detail.component';
+import { CardDetailComponent } from './card-detail/card-detail.component'; 
 
 @NgModule({
   declarations: [

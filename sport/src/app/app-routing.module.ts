@@ -49,7 +49,7 @@ const routes: Routes = [
   {path: 'registration', component: RegisterUserComponent},
   {path: 'login', component: LoginComponent},
   {path: 'cartDetails/:id', component: CartDetailComponent},
-  {path: 'updateCart/:id', component: UpdateCartComponent},
+  {path: 'updateCart/:id', component: UpdateCartComponent}, 
   {path: 'cartList', component: CartlistComponent, canActivate: [UserGuard]},
   {path: 'createCart/:userId/:productId', component: CreateCartComponent},
   {path: 'orderlist', component: OrderlistComponent, canActivate: [UserGuard]},

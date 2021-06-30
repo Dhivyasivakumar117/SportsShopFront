@@ -1,16 +1,31 @@
 <h3>Create Payment</h3>
 <div [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
- 
+ <!--type-->
     <div class="form-group">
-      <label for="name">Type</label>
-      <input type="text" class="form-control" id="type" disabled="disable" required [(ngModel)]="payment.type" name="type">
-    </div>
+      <label for="name">Type</label><span class="required">*</span>
+      <input [(ngModel)]="payment.type" type="text" class="form-control form-control-lg" id="type"
+                #type="ngModel" disabled="disable"
+                name="type" placeholder="Type" required>
+       </div>
+       <div *ngIf="!type?.valid && (type?.dirty || type?.touched)" class="error">
+        <div *ngIf="type.errors?.required">
+          Payment Type is required
+        </div>
+      </div>
  
-    <div class="form-group">
+      <!--Status
+    <div class="form-group"><span class="required">*</span>
       <label for="name">Status</label>
-      <input type="text" class="form-control" id="status" required [(ngModel)]="payment.status" name="status">
+        <input [(ngModel)]="payment.status" type="text" class="form-control form-control-lg" id="status"
+                #status="ngModel"
+                name="status" placeholder="Status" required>
     </div>
+    <div *ngIf="!status?.valid && (status?.dirty || status?.touched)" class="error">
+      <div *ngIf="status.errors?.required">
+        Payment Status is required
+      </div>
+    </div>-->
  
     <button type="submit" class="btn btn-success">Submit</button>
   </form>

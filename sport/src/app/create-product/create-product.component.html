@@ -107,8 +107,8 @@
                    name="productImage" placeholder="Photo">
         </div>
 
-        <div *ngIf="!productSize?.valid && (productSize?.dirty || productSize?.touched)" class="error">
-          <div *ngIf="productSize.errors?.required">
+        <div *ngIf="!productImage?.valid && (productImage?.dirty || productImage?.touched)" class="error">
+          <div *ngIf="productImage.errors?.required">
             Product Image is required
           </div>
         </div>

@@ -40,7 +40,7 @@ updateCart() {
     this.updateCart();    
   }
   gotoList() {
-    this.router.navigate(['/cartlist']);
+    this.router.navigate(['/cartList']);
   }
 
 }

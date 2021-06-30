@@ -29,7 +29,7 @@ export class CartDetailComponent implements OnInit {
   }
 
   list(){
-    this.router.navigate(['cart']);
+    this.router.navigate(['cartList']);
   }
 
 }

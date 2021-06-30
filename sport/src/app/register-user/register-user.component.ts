@@ -11,7 +11,8 @@ import { RegisterUserService } from '../register-user.service';
 export class RegisterUserComponent implements OnInit {
   user: User = new User();
   submitted = false;
-
+  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
+  
   constructor(private userService: RegisterUserService,private router: Router) { }
 
   ngOnInit() {

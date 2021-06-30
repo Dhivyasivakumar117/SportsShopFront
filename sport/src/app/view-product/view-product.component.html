@@ -15,10 +15,12 @@
       <div class="card" (click)="details(product.productId)" >
         <img src="{{product.productImage}}" class="card-img-top" alt="{{product.productImage}}">
         <div class="card-body">
-            <h2 class="card-title" style="color: Blue;">{{product.productName}}</h2>
-            <p class="card-text">{{product.description}}</p><br>
-             <h3 class="card-text" style="color: Green;">Size : {{product.productSize}}</h3>
-            <h3 class="card-text" style="color: crimson;">Price : Rs.{{product.mrp}}</h3>
+            <h2 class="card-title" style="color: Blue; margin: 0px;">{{product.productName}}</h2>
+            <h4 class="card-text" style="margin: 0px;">{{product.description}}</h4>
+             <h3 class="card-text" style="color: Green; margin: 0px;">Size : {{product.productSize}}</h3>
+            <h2 class="card-text" style="color: crimson; margin: 0px;">Price : Rs.{{product.priceAfterDiscount}}</h2>
+            <h5 class="card-text" style="color: #ffa500; margin: 0px;">{{product.mrp}} + {{product.discount}} % Discount</h5>
+            <h4 class="card-text" style="color: #6200ff; margin: 0px;">{{product.estimatedDelivery}}</h4>
         </div>
       </div>
     </div>

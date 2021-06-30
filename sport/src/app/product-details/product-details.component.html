@@ -23,13 +23,16 @@
             <label><b>Color : </b></label> {{product.color}}
           </div>  
           <div>
-            <label><b>Price : </b></label> {{product.mrp}}
+            <label><b>Price : </b></label> Rs.{{product.mrp}}
           </div>
           <div>
-            <label><b>Discount : </b></label> {{product.discount}}
+            <label><b>Discount : </b></label> {{product.discount}}%
           </div>  
           <div>
-            <label><b>Price After Discount : </b></label> {{product.priceAfterDiscount}}
+            <label><b>Price After Discount : </b></label> Rs.{{product.priceAfterDiscount}}
+          </div> 
+          <div>
+            <label><b>Delivery Date : </b></label> {{product.estimatedDelivery}}
           </div> 
           <div *ngIf="isStock">
             <label style="color: red;"><b>Out Of Stock </b></label>

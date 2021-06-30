@@ -19,9 +19,9 @@
             <td>{{card.cardName}}</td>
             <td>{{card.cardExpiry}}</td>
             <td>{{card.cvv}}</td>
-            <td><button (click)="deleteCard(card.cardNumber)" class="btn btn-danger">Delete</button>
+            <td><button (click)="deleteCard(card.cardId)" class="btn btn-danger">Delete</button>
                 <!--<button (click)="updateCard(card.cardNumber)" class="btn btn-info" style="margin-left: 10px">Update</button>-->
-                <button (click)="cardDetails(card.cardNumber)" class="btn btn-info" style="margin-left: 10px">Details</button>
+                <button (click)="cardDetails(card.cardId)" class="btn btn-info" style="margin-left: 10px">Details</button>
             </td>
           </tr>
         </tbody>

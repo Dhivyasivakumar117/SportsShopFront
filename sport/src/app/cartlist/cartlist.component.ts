@@ -20,14 +20,20 @@ export class CartlistComponent implements OnInit {
   ngOnInit(): void {
    // this.userId = this.route.snapshot.params['userId']
     this.reloadData();
+    // this.cart.forEach( (e) => {
+    //   e.forEach( (key) => {
+    //       this.total = this.total + key.total;
+    //   })
+    // })
+  }
+  reloadData() {
+    this.cart = this.cartService.getCartList();
+    this.total = 0;
     this.cart.forEach( (e) => {
       e.forEach( (key) => {
           this.total = this.total + key.total;
       })
     })
-  }
-  reloadData() {
-    this.cart = this.cartService.getCartList();
   }
   deleteCart(id: number) {
     this.cartService.deleteCart(id)
@@ -40,11 +46,11 @@ export class CartlistComponent implements OnInit {
   }
 
   updateCart(id: number) {
-    this.router.navigate(['update', id]);
+    this.router.navigate(['updateCart', id]);
   }
 
   cartDetails(id: number){
-    this.router.navigate(['details', id]);
+    this.router.navigate(['cartDetails', id]);
   }
 
   order(price: number | string){

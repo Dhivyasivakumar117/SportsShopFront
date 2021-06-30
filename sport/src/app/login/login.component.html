@@ -1,27 +1,34 @@
-
 <h3 mat-dialog-title>Login</h3>
 <div mat-dialog-content [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
-      <label for="userName">UserName</label>
-      <input type="userName" class="form-control" id="userName" required [(ngModel)]="login.userName" name="userName">
+      <label for="userName">UserName</label><span class="required">*</span>
+      <input [(ngModel)]="login.userName" type="text" class="form-control form-control-lg" id="userName"
+            #userName="ngModel"
+            name="userName" placeholder="UserName" required>
     </div>
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input type="password" class="form-control" id="password" required [(ngModel)]="login.password" name="password">
+    <div *ngIf="!userName?.valid && (userName?.dirty || userName?.touched)" class="error">
+      <div *ngIf="userName.errors?.required">
+        User Name is required
+      </div>
     </div>
-
+ 
+<div class="form-group">
+      <label for="password">Password</label><span class="required">*</span>
+      <input [(ngModel)]="login.password" type="password" class="form-control form-control-lg" id="password"
+            #password="ngModel"
+            name="password" placeholder="Password" required>
+    </div>
+    <div *ngIf="!password?.valid && (password?.dirty || password?.touched)" class="error">
+      <div *ngIf="password.errors?.required">
+        Password is required
+      </div>
+    </div>
+ 
     <button type="submit" class="btn btn-success">Submit</button>
-    <P>New User ? <a routerLink = "registration">Click here</a> </P>
+    <P>New User ? <button (click) = "goto()" class="btn btn-primary">Click here</button> </P>
   </form>
 </div>
 <div [hidden]="!submitted">
   <h4>Success!</h4>
 </div>
-
-
-
-
-
-
-
