@@ -13,7 +13,7 @@ export class UserGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       if (!this.authService.isUserSignIn()) {
-        alert('You are not allowed to view this page');
+      //  alert('You are not allowed to view this page');
          this.router.navigate(["login"],{ queryParams: { retUrl: route.url} });
         return false;
     }

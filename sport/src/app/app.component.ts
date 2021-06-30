@@ -38,4 +38,7 @@ export class AppComponent implements OnInit {
         )
     }
   }
+  cart(){
+    this.router.navigate(['cartList']);
+  }
 }

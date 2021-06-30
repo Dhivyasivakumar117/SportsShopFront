@@ -20,7 +20,7 @@ export class HockyComponent implements OnInit {
   }
 
   reloadData() {
-    this.products = this.productService.getProductByCategory('Hocky');
+    this.products = this.productService.getProductByCategory('Hockey');
   }
 
   details(id : number){

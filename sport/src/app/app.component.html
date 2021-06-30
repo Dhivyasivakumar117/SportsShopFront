@@ -1,36 +1,29 @@
 <mat-toolbar style="background-color: rgb(235, 217, 217);" class="mat-elevation-z5">
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>My App</span>
+  <button mat-icon-button  (click)="logout()"  class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>account_circle</mat-icon>Logout
+  </button>
+    <p><span style="margin-left: 25em;">Online Sports Shopping</span></p>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
+    <button style="margin-left: 37em;" mat-icon-button  (click)="cart()" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>shopping_cart</mat-icon>
     </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
-    </button>
-    <a  style="height: 60px;" routerLine= "cartList">
-    <mat-icon>shopping_cart</mat-icon></a>
-    <button mat-icon-button  (click)="logout()"  class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>account_circle</mat-icon>Logout
-    </button>
-  </mat-toolbar> 
+    
+  </mat-toolbar>  
   
   <mat-sidenav-container>
     <mat-sidenav mode="side" opened style="background-color: rgb(235, 217, 217); top: 64px" >
      <mat-nav-list style="width: 150px; top: 64px">
-       <a mat-list-item style="height: 60px;" routerLink = "editProduct" routerLinkActive="active"><mat-icon>dashboard</mat-icon>Edit Product</a>
-       <a mat-list-item style="height: 60px;" routerLink = "addProduct" routerLinkActive="active" ><mat-icon>account_circle</mat-icon>Add Product</a>
        <a mat-list-item style="height: 60px;" routerLink="viewProduct" routerLinkActive="active"><mat-icon>account_box</mat-icon>View Product</a>
        <a mat-list-item style="height: 60px;" routerLink = "cricket"><mat-icon>calendar_today</mat-icon>Cricket</a>
        <a mat-list-item style="height: 60px;" routerLink = "vollyball" ><mat-icon>contact_support</mat-icon>VollyBall</a> 
        <a mat-list-item style="height: 60px;" routerLink = "football" ><mat-icon>contact_support</mat-icon>FootBall</a>
-       <a mat-list-item style="height: 60px;" routerLink = "hocky" ><mat-icon>contact_support</mat-icon>Hocky</a>
+       <a mat-list-item style="height: 60px;" routerLink = "hockey" ><mat-icon>contact_support</mat-icon>Hockey</a>
        <a mat-list-item style="height: 60px;" routerLink="userlist" routerLinkActive="active"><mat-icon>account_box</mat-icon>User Details</a>
-       <a mat-list-item style="height: 60px;" routerLink = "orderlist" routerLinkActive="active" ><mat-icon>account_circle</mat-icon>Add Product</a>
-       <a mat-list-item style="height: 60px;" routerLink="cartList" routerLinkActive="active"><mat-icon>account_box</mat-icon>View Product</a>
-       <a mat-list-item style="height: 60px;" routerLink = "cardList" routerLinkActive="active" ><mat-icon>account_circle</mat-icon>Add Product</a>
+       <a mat-list-item style="height: 60px;" routerLink = "orderlist" routerLinkActive="active" ><mat-icon>account_circle</mat-icon>Order List</a>
+       <a mat-list-item style="height: 60px;" routerLink="cartList" routerLinkActive="active"><mat-icon>account_box</mat-icon>Cart List</a>
+       <a mat-list-item style="height: 60px;" routerLink = "cardList" routerLinkActive="active" ><mat-icon>account_circle</mat-icon>Card List</a>
+       <a mat-list-item style="height: 60px;" routerLink = "editProduct" routerLinkActive="active"><mat-icon>dashboard</mat-icon>Edit Product</a>
+       <a mat-list-item style="height: 60px;" routerLink = "addProduct" routerLinkActive="active" ><mat-icon>account_circle</mat-icon>Add Product</a>
       </mat-nav-list>
     </mat-sidenav>  
     <mat-sidenav-content >
