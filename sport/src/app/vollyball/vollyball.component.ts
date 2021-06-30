@@ -20,7 +20,7 @@ export class VollyballComponent implements OnInit {
   }
 
   reloadData() {
-    this.products = this.productService.getProductByCategory('Vollyball');
+    this.products = this.productService.getProductByCategory('Volleyball');
   }
 
   details(id : number){

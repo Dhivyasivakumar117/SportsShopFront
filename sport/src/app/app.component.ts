@@ -10,9 +10,11 @@ import { LoginService } from './login.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'sport'; 
+  title = 'sport';
   userName : string = '';
   disable : boolean = false;
+  isadmin : boolean = true;
+  isuser : boolean =  true;
   constructor (private authService: AuthService, private loginService : LoginService, private router:Router) {
   }
   ngOnInit(): void {
@@ -24,18 +26,24 @@ export class AppComponent implements OnInit {
     this.userName = this.authService.userName;
     if(this.userName == 'admin'){
       this.authService.logoutUser();
+      this.isadmin = false;
       this.router.navigate(['home']);
-    }else{
+      alert("Admin LogOut Successfully");
+    }else if(this.userName){
       this.loginService.logout(this.userName).subscribe(
         data=> {
             console.log(data);
             this.authService.isLogoutUser();
+            this.isuser = false;
             this.router.navigate(['home']);
+            alert(this.userName + " LogOut Successfully");
         },
         error=> {
-           console.log(error)
+           console.log(error);
           }
         )
+    }else{
+      alert("Login Before Logout");
     }
   }
   cart(){

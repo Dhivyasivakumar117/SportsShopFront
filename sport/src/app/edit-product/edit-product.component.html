@@ -6,23 +6,23 @@
       <table class="table table-striped">
         <thead>
           <tr>
-            <th>ProductName</th>
-            <th>Category</th>
-            <th>Description</th>
-            <th>Brand</th>
-            <th>Color</th>
+            <th (click)="sort('productName')" >ProductName</th>
+            <th (click)="sort('category')" >Category</th>
+            <th (click)="sort('description')" >Description</th>
+            <th (click)="sort('brand')" >Brand</th>
+            <th (click)="sort('color')" >Color</th>
             <th>Product Size</th>
             <th>Image Link</th>
-            <th>MRP</th>
-            <th>Discount</th>
-            <th>PriceAfterDiscount</th>
-            <th>Stock</th>
-            <th>EstimatedDelivery</th>
+            <th (click)="sort('mrp')" >MRP</th>
+            <th (click)="sort('discount')" >Discount</th>
+            <th (click)="sort('priceAfterDiscount')" >PriceAfterDiscount</th>
+            <th (click)="sort('inStock')" >Stock</th>
+            <th (click)="sort('estimatedDelivery')" >EstimatedDelivery</th>
             <th>Update/Delete</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let product of products | async">
+          <tr *ngFor="let product of products | async | orderBy : key: reverse">
             <td>{{product.productName}}</td>
             <td>{{product.category}}</td>
             <td>{{product.description}}</td>

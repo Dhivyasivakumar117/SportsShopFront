@@ -37,6 +37,11 @@ export class EditProductComponent implements OnInit {
     this.router.navigate(['updateProduct', id]);
   }
 
- 
+  key: string | number = 'productName';
+  reverse:boolean = false;
+  sort(key : any){
+    this.key = key;
+    this.reverse = !this.reverse;
+  } 
 
 }

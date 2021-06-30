@@ -35,7 +35,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   {path: 'home', component: HomeComponent},
   {path: 'cricket', component: CricketComponent,  canActivate: [UserGuard]},
-  {path: 'vollyball', component: VollyballComponent,  canActivate: [UserGuard]},
+  {path: 'volleyball', component: VollyballComponent,  canActivate: [UserGuard]},
   {path: 'football', component: FootballComponent,  canActivate: [UserGuard]},
   {path: 'hockey', component: HockyComponent,  canActivate: [UserGuard]},
   {path: 'module', component: MenumoduleComponent},

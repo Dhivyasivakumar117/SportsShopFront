@@ -5,8 +5,8 @@
       <mat-icon>close</mat-icon>
     </button>
 </mat-form-field>
-<span style="margin-left: 250px;">
-<button  mat-icon-button (click)="sort('mrp')">
+<span style="margin-left: 250px;"  #tooltip="matTooltip" matTooltip="Sort Product By Price" matTooltipPosition="left">
+<button  mat-icon-button  (click)="sort('mrp')">
   <mat-icon>sort</mat-icon>
 </button>
 </span>
@@ -20,7 +20,7 @@
              <h3 class="card-text" style="color: Green; margin: 0px;">Size : {{product.productSize}}</h3>
             <h2 class="card-text" style="color: crimson; margin: 0px;">Price : Rs.{{product.priceAfterDiscount}}</h2>
             <h5 class="card-text" style="color: #ffa500; margin: 0px;">{{product.mrp}} + {{product.discount}} % Discount</h5>
-            <h4 class="card-text" style="color: #6200ff; margin: 0px;">{{product.estimatedDelivery}}</h4>
+            <h4 class="card-text" style="color: #6200ff; margin: 0px;">Delivery Date : {{product.estimatedDelivery}}</h4>
         </div>
       </div>
     </div>

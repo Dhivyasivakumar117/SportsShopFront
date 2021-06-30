@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
     password: string="";
     retUrl:string="editProduct";
     retUserUrl: string = "viewProduct";
+    iserror : boolean = false;
      
     constructor(private loginService: LoginService, private authService : AuthService,private router: Router, public dialog: MatDialog, private activatedRoute :ActivatedRoute) { }
     ngOnInit(): void {
@@ -53,7 +54,8 @@ export class LoginComponent implements OnInit {
             });
           },
           error=> {
-             console.log(error)
+             console.log(error);
+              this.iserror = true;
             }
           )
        }
