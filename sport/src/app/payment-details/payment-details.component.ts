@@ -29,6 +29,6 @@ export class PaymentDetailsComponent implements OnInit {
   }
  
   list(){
-    this.router.navigate(['payment']);
+    this.router.navigate(['paymentList']);
   }
 }
