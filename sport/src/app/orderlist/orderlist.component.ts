@@ -33,10 +33,6 @@ export class OrderlistComponent implements OnInit {
         error => console.log(error));
   }
  
-  // updateOrder(id: number) {
-  //   this.router.navigate(['order', id]);
-  // }
- 
   orderDetails(id: number){
     this.router.navigate(['orderdetails', id]);
   }

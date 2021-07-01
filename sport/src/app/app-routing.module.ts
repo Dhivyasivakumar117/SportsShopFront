@@ -16,7 +16,6 @@ import { FootballComponent } from './football/football.component';
 import { HockyComponent } from './hocky/hocky.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { MenumoduleComponent } from './menumodule/menumodule.component';
 import { OrderDetailsComponent } from './order-details/order-details.component';
 import { OrderlistComponent } from './orderlist/orderlist.component';
 import { PaymentDetailsComponent } from './payment-details/payment-details.component';
@@ -38,7 +37,6 @@ const routes: Routes = [
   {path: 'volleyball', component: VollyballComponent,  canActivate: [UserGuard]},
   {path: 'football', component: FootballComponent,  canActivate: [UserGuard]},
   {path: 'hockey', component: HockyComponent,  canActivate: [UserGuard]},
-  {path: 'module', component: MenumoduleComponent},
   {path: 'addProduct', component: CreateProductComponent, canActivate : [AdminGuard]},
   {path: 'editProduct', component: EditProductComponent, canActivate : [AdminGuard]},
   {path: 'updateProduct/:id', component: UpdateProductComponent},

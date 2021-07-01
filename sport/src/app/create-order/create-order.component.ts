@@ -23,7 +23,6 @@ export class CreateOrderComponent implements OnInit {
  
   ngOnInit() {
     this.order = new Order();
-   // this.userId = this.route.snapshot.params['userId']
     this.price = this.route.snapshot.params['price'];
     this.order.amount = this.price;
     this.order.billingDate = new Date();

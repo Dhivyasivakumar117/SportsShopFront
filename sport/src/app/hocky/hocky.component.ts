@@ -32,6 +32,4 @@ export class HockyComponent implements OnInit {
     this.key = key;
     this.reverse = !this.reverse;
   }
-
-
 }

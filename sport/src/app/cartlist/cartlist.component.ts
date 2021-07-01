@@ -18,13 +18,7 @@ export class CartlistComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-   // this.userId = this.route.snapshot.params['userId']
     this.reloadData();
-    // this.cart.forEach( (e) => {
-    //   e.forEach( (key) => {
-    //       this.total = this.total + key.total;
-    //   })
-    // })
   }
   reloadData() {
     this.cart = this.cartService.getCartList();

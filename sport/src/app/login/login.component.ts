@@ -23,11 +23,6 @@ export class LoginComponent implements OnInit {
     constructor(private loginService: LoginService, private authService : AuthService,private router: Router, public dialog: MatDialog, private activatedRoute :ActivatedRoute) { }
     ngOnInit(): void {
       }
-      
-     /* onSubmit(loginForm : any) {
-      this.submitted = true;
-      this.save();    
-      }*/
 
     onSubmit() {
       if(this.login.userName == 'admin' && this.login.password == 'admin'){
