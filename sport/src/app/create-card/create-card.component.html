@@ -3,13 +3,19 @@
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="name">Card Number</label><span class="required">*</span>
-      <input [(ngModel)]="card.cardNumber" type="text" class="form-control form-control-lg" id="cardNumber"
+      <input [(ngModel)]="card.cardNumber" pattern="^[0-9]+$" maxlength="12" minlength="12" type="text" class="form-control form-control-lg" id="cardNumber"
             #cardNumber="ngModel"
             name="cardNumber" placeholder="Card Number" required>
     </div>
     <div *ngIf="!cardNumber?.valid && (cardNumber?.dirty || cardNumber?.touched)" class="error">
       <div *ngIf="cardNumber.errors?.required">
         Card Number is required
+      </div>
+      <div *ngIf="cardNumber.errors?.minlength">
+        Card number should be 12 digits
+      </div>
+      <div *ngIf="cardNumber.errors?.pattern">
+        Only numbers are allowed
       </div>
     </div>
  
@@ -27,7 +33,7 @@
  
     <div class="form-group">
       <label for="name">Card Expiry</label><span class="required">*</span>
-      <input [(ngModel)]="card.cardExpiry" type="text" class="form-control form-control-lg" id="cardExpiry"
+      <input [(ngModel)]="card.cardExpiry" type="date" class="form-control form-control-lg" id="cardExpiry"
             #cardExpiry="ngModel"
             name="cardExpiry" placeholder="Card Expiry" required>
     </div>
@@ -40,12 +46,18 @@
     <div class="form-group">
         <label for="name">Cvv</label><span class="required">*</span>
         <input [(ngModel)]="card.cvv" type="password" class="form-control form-control-lg" id="cvv"
-              #cvv="ngModel"
+              #cvv="ngModel"  pattern="^[0-9]+$" maxlength="3" minlength="3"
               name="cvv" placeholder="Cvv" required>
       </div>
       <div *ngIf="!cvv?.valid && (cvv?.dirty || cvv?.touched)" class="error">
         <div *ngIf="cvv.errors?.required">
           CVV is required
+        </div>
+        <div *ngIf="cvv.errors?.minlength">
+          CVV should be 3 digits
+        </div>
+        <div *ngIf="cvv.errors?.pattern">
+          Only numbers are allowed
         </div>
       </div>
  

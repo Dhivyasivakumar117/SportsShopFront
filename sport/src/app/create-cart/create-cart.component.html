@@ -29,7 +29,7 @@
     <div class="form-group">
       <label for="name">Quantity</label><span class="required">*</span>
       <input [(ngModel)]="cart.quantity" type="text" class="form-control form-control-lg" id="quantity"
-      #quantity="ngModel"
+      #quantity="ngModel" maxlength="1"
       name="quantity" placeholder="Quantity" required>
     </div>
     <div *ngIf="!quantity?.valid && (quantity?.dirty || quantity?.touched)" class="error">

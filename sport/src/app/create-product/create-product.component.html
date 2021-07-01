@@ -1,7 +1,6 @@
 <h1 align="center" class="display-4 mb-5">Add Product</h1>
 <div style="width:40%; margin: 25px auto">
     <form #form="ngForm" (ngSubmit)="onSubmit()">
-       <!--Name-->
         <div class="form-group">
           <label>Name</label><span class="required">*</span>
           <input [(ngModel)]="product.productName" type="text" class="form-control form-control-lg" id="productName"
@@ -13,8 +12,6 @@
               Product Name is required
             </div>
           </div>
-
-          <!--Category-->
         <div class="form-group">
           <label for="category">Category</label><span class="required">*</span>
             <select class="custom-select custom-select-lg " id="category" name="category" #category="ngModel"
@@ -31,21 +28,20 @@
             Category is required
           </div>
         </div>
-
-          <!--Description-->
-          <div class="form-group">
+        <div class="form-group">
             <label>Description</label>
             <textarea class="form-control form-control-lg text-left" #discription="ngModel"
-                      id="description" name="description"
+                      id="description" name="description" maxlength="50" required
                       placeholder="Description" [(ngModel)]="product.description"></textarea>
           </div>
           <div *ngIf="!discription?.valid && (discription?.dirty || discription?.touched)" class="error">
             <div *ngIf="discription.errors?.required">
               Discription is required
             </div>
-          </div>
-           
-           <!--Brand-->
+            <div *ngIf="discription.errors?.maxlength">
+              Discription length exceed the limit
+            </div>
+        </div>
         <div class="form-group">
           <label>Brand</label><span class="required">*</span>
           <input [(ngModel)]="product.brand" type="text" class="form-control form-control-lg" id="brand"
@@ -57,8 +53,6 @@
             Brand is required
           </div>
         </div>
-
-          <!--Color-->
         <div class="form-group">
           <label for="color">Color</label><span class="required">*</span>
             <select class="custom-select custom-select-lg " id="color" name="color" #color="ngModel"
@@ -80,8 +74,6 @@
             Color is required
           </div>
         </div>
-
-         <!--Product Size-->
          <div class="form-group">
           <label for="productSize">Product Size</label><span class="required">*</span>
             <select class="custom-select custom-select-lg " id="productSize" name="productSize" #productSize="ngModel"
@@ -99,8 +91,6 @@
             Product Size is required
           </div>
         </div>
-  
-        <!--Photo-->
         <div class="form-group">
             <label>Image Link</label><span class="required">*</span>
             <input [(ngModel)]="product.productImage" type="text" class="form-control form-control-lg" #productImage="ngModel" id="productImage"
@@ -112,16 +102,15 @@
             Product Image is required
           </div>
         </div>
-
-    
-        <!--Price-->
         <div class="form-group">
             <label for="mrp">Price</label><span class="required">*</span>
             <input class="form-control form-control-lg"
-                   type="number"
+                   type="text"
                    id="mrp"
                    name="mrp"
                    #mrp="ngModel"
+                   maxlength="5"
+                   pattern="^[0-9]+$"
                    [(ngModel)]="product.mrp" 
                    required>
         </div>
@@ -130,8 +119,10 @@
           <div *ngIf="mrp.errors?.required">
             Price is required
           </div>
+          <div *ngIf="mrp.errors?.pattern">
+            Only numbers are allowed
+          </div>
         </div>
-        <!--Stock-->
         <div class="form-group">
             <label for="inStock">Stock</label><span class="required">*</span> 
             <select class="custom-select custom-select-lg " id="inStock" name="inStock"  #inStock="ngModel"
@@ -146,16 +137,18 @@
             Stock is required
           </div>
         </div>
-        <!--Discount-->
         <div class="form-group">
           <label for="discount">Discount</label><span class="required">*</span>
-          <input [(ngModel)]="product.discount" type="number" class="form-control form-control-lg" id="discount"
-                #discount="ngModel"
+          <input [(ngModel)]="product.discount" type="text" class="form-control form-control-lg" id="discount"
+                #discount="ngModel" maxlength= "2"  pattern="^[0-9]+$"
                 name="discount" placeholder="Discount" required >
       </div>
       <div *ngIf="!discount?.valid && (discount?.dirty || discount?.touched)" class="error">
         <div *ngIf="discount.errors?.required">
           Discount is required
+        </div>
+        <div *ngIf="discount.errors?.pattern">
+          Only numbers are allowed
         </div>
       </div>
         
@@ -163,6 +156,4 @@
             <button type="submit" [disabled]="!form.form.valid" class="btn btn-lg btn-primary btn-block">Submit</button>
         </div>
     </form>
-
-
 </div>
