@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { Login } from '../class/Login';
@@ -20,7 +19,7 @@ export class LoginComponent implements OnInit {
     retUserUrl: string = "viewProduct";
     iserror : boolean = false;
      
-    constructor(private loginService: LoginService, private authService : AuthService,private router: Router, public dialog: MatDialog, private activatedRoute :ActivatedRoute) { }
+    constructor(private loginService: LoginService, private authService : AuthService,private router: Router,  private activatedRoute :ActivatedRoute) { }
     ngOnInit(): void {
       }
 

@@ -33,10 +33,6 @@ export class CardlistComponent implements OnInit {
         error => console.log(error));
   }
  
-  updateCard(id: number) {
-    this.router.navigate(['/updatec', id]);
-  }
- 
   cardDetails(id: number){
     this.router.navigate(['/carddetails', id]);
   }
